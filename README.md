@@ -1,26 +1,33 @@
-wayland
-=======
+Aurora Client
+=============
 
-[![License](https://img.shields.io/badge/license-LGPLv3.0-blue.svg)](http://www.gnu.org/licenses/lgpl.txt)
-[![GitHub release](https://img.shields.io/github/release/lirios/wayland.svg)](https://github.com/lirios/wayland)
-[![GitHub issues](https://img.shields.io/github/issues/lirios/wayland.svg)](https://github.com/lirios/wayland/issues)
-[![CI](https://github.com/lirios/wayland/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/wayland/actions?query=workflow%3ACI)
+[![License](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](http://www.gnu.org/licenses/gpl.txt)
+[![GitHub release](https://img.shields.io/github/release/lirios/aurora-client.svg)](https://github.com/lirios/aurora-client)
+[![GitHub issues](https://img.shields.io/github/issues/lirios/aurora-client.svg)](https://github.com/lirios/aurora-client/issues)
+[![CI](https://github.com/lirios/aurora-client/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/aurora-client/actions?query=workflow%3ACI)
 
-Wayland client and server extensions.
+Qt-style API to interact with Wayland protocols inside Qt-based graphical applications.
 
 ## Dependencies
 
-Qt >= 5.12.0 with at least the following modules is required:
+Qt >= 5.15.0 with at least the following modules is required:
 
  * [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
- * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
  * [qtwayland](http://code.qt.io/cgit/qt/qtwayland.git)
 
 The following modules and their dependencies are required:
 
  * [cmake](https://gitlab.kitware.com/cmake/cmake) >= 3.10.0
- * [cmake-shared](https://github.com/lirios/cmake-shared.git) >= 1.0.0
+ * [cmake-shared](https://github.com/lirios/cmake-shared.git) >= 2.0.0
  * [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols) >= 1.15
+
+Build-time only dependencies:
+
+ * [aurora-scanner](https://github.com/lirios/aurora-scanner.git) >= 0.0.0
+
+Optional dependencies:
+
+ * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
 
 ## Installation
 
@@ -45,11 +52,12 @@ to learn how to enable them.
 
 Available categories:
 
-  * **liri.waylandclient:** Wayland client extensions
-  * **liri.waylandclient.layershell:** Layer Shell interface for clients
-  * **liri.waylandserver:** Wayland server extensions
+  * **aurora.client.wlrforeigntoplevelmanagementv1:** Foreign toplevel management client extension.
+  * **aurora.client.wlrlayershellv1:** Layer shell client extension.
+  * **aurora.client.wlrscreencopyv1:** Screencopy client extension.
+  * **aurora.client.lirishellv1:** Shell client extension.
 
 ## Licensing
 
-Licensed under the terms of the GNU Lesser General Public License version 3 or,
+Licensed under the terms of the GNU General Public License version 3 or,
 at your option, any later version.

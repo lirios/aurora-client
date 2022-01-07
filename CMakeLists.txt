@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10.0)
 
-project("Wayland"
+project("AuroraClient"
     VERSION "0.0.0"
-    DESCRIPTION "Wayland client and server extensions"
+    DESCRIPTION "Qt-style API for Wayland clients"
     LANGUAGES CXX C
 )
 
@@ -16,24 +16,16 @@ endif()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_CURRENT_SOURCE_DIR}/cmake/3rdparty")
 
 ## Set minimum versions required:
-set(QT_MIN_VERSION "5.12.0")
+set(QT_MIN_VERSION "5.15.0")
 
 ## Liri specific setup common for all modules:
 include(LiriSetup)
 
 ## Only build on the appropriate platforms.
-if(NOT UNIX OR ANDROID)
-    message(NOTICE "Skipping the build as the condition \"UNIX OR ANDROID\" is not met.")
+if(NOT (LINUX OR APPLE OR QNX))
+    message(NOTICE "Skipping the build as the condition \"LINUX OR APPLE OR QNX\" is not met.")
     return()
 endif()
-
-## Find Wayland:
-find_package(Wayland 1.15 COMPONENTS Client Server)
-set_package_properties(Wayland PROPERTIES TYPE REQUIRED)
-
-## Find wayland-protocols:
-find_package(WaylandProtocols 1.15)
-set_package_properties(WaylandProtocols PROPERTIES TYPE REQUIRED)
 
 ## Find Qt 5:
 find_package(Qt5 "${QT_MIN_VERSION}"
@@ -43,20 +35,12 @@ find_package(Qt5 "${QT_MIN_VERSION}"
         Qml
         Quick
         Gui
-        WaylandCompositor
         WaylandClient
 )
 
 ## Add subdirectories:
-add_subdirectory(src/waylandclient)
-add_subdirectory(src/waylandserver)
-add_subdirectory(src/imports/waylandclient)
-add_subdirectory(src/imports/waylandserver)
+add_subdirectory(src/client)
+add_subdirectory(src/imports/client)
 if(BUILD_TESTING)
-    if(TARGET WaylandClient)
-        add_subdirectory(tests/auto/client)
-    endif()
-    if(TARGET WaylandServer)
-        add_subdirectory(tests/auto/server)
-    endif()
+    add_subdirectory(tests/auto/client)
 endif()

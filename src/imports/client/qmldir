@@ -1,0 +1,4 @@
+module Aurora.Client
+plugin auroraclientplugin
+classname WaylandClientPlugin
+typeinfo plugins.qmltypes
