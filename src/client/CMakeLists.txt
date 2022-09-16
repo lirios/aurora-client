@@ -22,6 +22,7 @@ liri_add_module(AuroraClient
         Qt::Gui
         Qt::Qml
         Qt::WaylandClient
+        Wayland::Client
     LIBRARIES
         Qt::GuiPrivate
     PKGCONFIG_DEPENDENCIES
