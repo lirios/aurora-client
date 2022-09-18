@@ -1,4 +1,4 @@
-include(LiriAuroraClientMacros.cmake)
+include(Liri1AuroraClientMacros.cmake)
 
 liri_add_module(AuroraClient
     DESCRIPTION
