@@ -24,7 +24,6 @@
 #include <QtQml>
 
 #include <LiriAuroraClient/LiriColorPickerManagerV1>
-#include <LiriAuroraClient/LiriLockScreenV1>
 #include <LiriAuroraClient/LiriModalV1>
 #include <LiriAuroraClient/LiriShellV1>
 #include <LiriAuroraClient/WlrExportDmabufManagerV1>
@@ -32,6 +31,7 @@
 #include <LiriAuroraClient/WlrOutputManagerV1>
 #include <LiriAuroraClient/WlrScreencopyManagerV1>
 
+#include "extsessionlocksurfacev1qml.h"
 #include "lirishortcutqml.h"
 #include "wlrlayersurfacev1qml.h"
 #include "utils.h"
@@ -51,8 +51,9 @@ public:
         const int versionMajor = 1;
         const int versionMinor = 0;
 
+        qmlRegisterType<ExtSessionLockSurfaceV1Qml>(uri, versionMajor, versionMinor, "ExtSessionLockSurfaceV1");
+
         qmlRegisterType<LiriColorPickerManagerV1>(uri, versionMajor, versionMinor, "LiriColorPickerManagerV1");
-        qmlRegisterType<LiriLockScreenV1>(uri, versionMajor, versionMinor, "LiriLockScreenV1");
         qmlRegisterType<LiriModalV1>(uri, versionMajor, versionMinor, "LiriModalV1");
         qmlRegisterType<LiriShellV1>(uri, versionMajor, versionMinor, "LiriShellV1");
         qmlRegisterType<LiriShortcutQml>(uri, versionMajor, versionMinor, "LiriShortcutV1");

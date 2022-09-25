@@ -4,8 +4,8 @@ liri_add_module(AuroraClient
     DESCRIPTION
         "Wayland client library for Qt applications"
     SOURCES
+        extsessionlocksurfacev1.cpp extsessionlocksurfacev1.h
         liricolorpickerv1.cpp liricolorpickerv1.h liricolorpickerv1_p.h
-        lirilockscreenv1.cpp lirilockscreenv1_p.h lirilockscreenv1.h
         lirimodalv1.cpp lirimodalv1.h lirimodalv1_p.h
         lirishellv1.cpp lirishellv1.h lirishellv1_p.h
         utils_p.h
@@ -34,7 +34,6 @@ liri_add_module(AuroraClient
 liri_generate_wayland_protocol_client_sources(AuroraClient
     FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/../../data/protocols/liri-color-picker-unstable-v1.xml
-        ${CMAKE_CURRENT_SOURCE_DIR}/../../data/protocols/liri-lockscreen-unstable-v1.xml
         ${CMAKE_CURRENT_SOURCE_DIR}/../../data/protocols/liri-shell-unstable-v1.xml
         ${CMAKE_CURRENT_SOURCE_DIR}/../../data/protocols/wlr-export-dmabuf-unstable-v1.xml
         ${CMAKE_CURRENT_SOURCE_DIR}/../../data/protocols/wlr-foreign-toplevel-management-unstable-v1.xml
