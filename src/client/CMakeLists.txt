@@ -4,6 +4,7 @@ liri_add_module(AuroraClient
     DESCRIPTION
         "Wayland client library for Qt applications"
     SOURCES
+        extsessionlocksurfacev1.cpp extsessionlocksurfacev1.h
         liricolorpickerv1.cpp liricolorpickerv1.h liricolorpickerv1_p.h
         lirimodalv1.cpp lirimodalv1.h lirimodalv1_p.h
         lirishellv1.cpp lirishellv1.h lirishellv1_p.h

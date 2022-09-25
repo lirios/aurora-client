@@ -6,6 +6,7 @@ liri_add_qml_plugin(AuroraClientQmlPlugin
     OUTPUT_NAME
         auroraclientplugin
     SOURCES
+        extsessionlocksurfacev1qml.cpp extsessionlocksurfacev1qml.h
         lirishortcutqml.cpp lirishortcutqml.h
         plugin.cpp
         wlrlayersurfacev1qml.cpp wlrlayersurfacev1qml.h
